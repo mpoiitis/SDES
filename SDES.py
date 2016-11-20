@@ -75,7 +75,7 @@ def sbox(text, sbox):
 def f(r, key):
     perm = permutation(r, E_P)
     xored = xor(perm, key)
-    sboxResult = sbox(left(perm), S0) + sbox(right(perm), S1)
+    sboxResult = sbox(left(xored), S0) + sbox(right(xored), S1)
     result = permutation(sboxResult, P4)
     return result
 
